@@ -17,7 +17,7 @@ Note: mining_causal_topics.ipynb combines code and results from identify_candida
 
 find_election_paragraphs.py: filters May through October 2000 New York Times articles for election-related paragraphs
 *	find_election_paragraphs(directory): given a directory containing XML article data, walks through all subdirectories and parses all files. Writes all election-related paragraphs (those containing “Gore” or “Bush”) to a file called “election_paragraphs.csv”
-  **	Helper functions:
+**	   Helper functions:
     ***	parse_xml(xml, election_paragraphs): checks XML article for person tag, then parses relevant articles’ full text for relevant paragraphs
     ***	contains_election_words(text): returns true if and only if “Bush” or “Gore” is a substring of the input text
     ***	format_date(file_path): returns formatted date from directory path
