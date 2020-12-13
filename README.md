@@ -7,6 +7,9 @@ Hyun Duk Kim, Malu Castellanos, Meichun Hsu, ChengXiang Zhai, Thomas Rietz, and 
 
 ### Video:
 
+### Documentation
+Documentation is reproduced below. However, for better formatting and reading, please see the [PDF version](https://github.com/kplhung/CourseProject/blob/main/documentation.pdf).
+
 ### 1. Code functionality overview
 This code parses a large data set  and extracts a set of documents consisting of paragraphs related to the 2000 United States presidential election, contested between Republican George W. Bush and Democrat Al Gore. It then goes on to apply latent Dirichlet allocation (LDA), a generative statistical model, to this document set, thus identifying candidate topics in the set. Normalized prices based on the Democratic candidate, Al Gore, are then extracted from the Iowa Electronic Markets (IEM) 2000 Presidential Winner-Takes-All Market , and Granger testing is performed to determine possible causality of the candidate topics, indicating which topical key words are most likely to impact the candidate’s IEM price positively or negatively—that is, their likelihood of being elected. This can be taken as a prior for future iterations of causal topic mining.
 
@@ -17,7 +20,7 @@ Note: mining_causal_topics.ipynb combines code and results from identify_candida
 
 find_election_paragraphs.py: filters May through October 2000 New York Times articles for election-related paragraphs
 *	find_election_paragraphs(directory): given a directory containing XML article data, walks through all subdirectories and parses all files. Writes all election-related paragraphs (those containing “Gore” or “Bush”) to a file called “election_paragraphs.csv”
-**	   Helper functions:
+   **	Helper functions:
     ***	parse_xml(xml, election_paragraphs): checks XML article for person tag, then parses relevant articles’ full text for relevant paragraphs
     ***	contains_election_words(text): returns true if and only if “Bush” or “Gore” is a substring of the input text
     ***	format_date(file_path): returns formatted date from directory path
