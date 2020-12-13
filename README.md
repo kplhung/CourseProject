@@ -50,7 +50,7 @@ o	Sort candidate topic terms by causality probability, where a smaller p-value c
 o	Determine positive impact terms and negative impact terms, where positive impact terms are the ones with p-values in the lower half, and negative impact terms are the ones with p-values in the upper half
 
 ### 3. Usage
--	Install Jupyter using the documentation provided here
+-	Install Jupyter using the documentation provided [here](https://jupyter.org/install)
 -	Open terminal and run the following command: git clone https://github.com/kplhung/CourseProject.git
 -	Launch Jupyter Notebook and navigate to the CourseProject directory
 -	Open and run find_election_paragraphs.ipynb: [Kernel] -> [Restart & Run All]
