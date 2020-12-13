@@ -17,37 +17,37 @@ Note: mining_causal_topics.ipynb combines code and results from identify_candida
 
 find_election_paragraphs.py: filters May through October 2000 New York Times articles for election-related paragraphs
 *	find_election_paragraphs(directory): given a directory containing XML article data, walks through all subdirectories and parses all files. Writes all election-related paragraphs (those containing “Gore” or “Bush”) to a file called “election_paragraphs.csv”
-**	Helper functions:
-***	parse_xml(xml, election_paragraphs): checks XML article for person tag, then parses relevant articles’ full text for relevant paragraphs
-***	contains_election_words(text): returns true if and only if “Bush” or “Gore” is a substring of the input text
-***	format_date(file_path): returns formatted date from directory path
+  **	Helper functions:
+    ***	parse_xml(xml, election_paragraphs): checks XML article for person tag, then parses relevant articles’ full text for relevant paragraphs
+    ***	contains_election_words(text): returns true if and only if “Bush” or “Gore” is a substring of the input text
+    ***	format_date(file_path): returns formatted date from directory path
 
 identify_candidate_topics.py: applies LDA to the document set to identify candidate topics
 *	Data wrangling
-**	Wrangle and clean paragraph data by removing punctuation and lowercasing text
-**	Remove stop words from the paragraph data and vectorize the text using scikit-learn, then learn the vocabulary dictionary, deriving a document-term matrix over the paragraph set
+  **	Wrangle and clean paragraph data by removing punctuation and lowercasing text
+  **	Remove stop words from the paragraph data and vectorize the text using scikit-learn, then learn the vocabulary dictionary, deriving a document-term matrix over the paragraph set
 *	Topic modeling with LDA
-**	Using LDA, learn the documents as bags of words and identify candidate topics in the paragraph set 
-**	Transform the document-term matrix according to the fitted LDA model, and index on date (dates range from May 1st, 2000 to October 31st, 2000)
+  **	Using LDA, learn the documents as bags of words and identify candidate topics in the paragraph set 
+  **	Transform the document-term matrix according to the fitted LDA model, and index on date (dates range from May 1st, 2000 to October 31st, 2000)
 
 iowa_electronic_markets.py: wrangles, cleans, and normalizes IEM 2000 Presidential Winner-Takes-All Market data
 *	Data wrangling
-**	format_date(date): given IEM-style date (mm/dd/yy), returns NYT-style date (yyyy-mm-dd)
-**	Read from “iem_2000.txt”—candidate price data from May to October 2000— and drop irrelevant columns (namely: units, volume, low price, high price, and average price), keeping only date, contract, and last price data; index on date
-**	Derive lists of Democratic and Republican candidate prices based on the “contract” field (“Dem” indicates Democrat; “Rep” indicates Republican)
-**	Compute normalized prices based on the Democratic candidate
-***	For each date index, normalized price = Dem price / (Dem price + Rep price)
+  **	format_date(date): given IEM-style date (mm/dd/yy), returns NYT-style date (yyyy-mm-dd)
+  **	Read from “iem_2000.txt”—candidate price data from May to October 2000— and drop irrelevant columns (namely: units, volume, low price, high price, and average price), keeping only date, contract, and last price data; index on date
+  **	Derive lists of Democratic and Republican candidate prices based on the “contract” field (“Dem” indicates Democrat; “Rep” indicates Republican)
+  **	Compute normalized prices based on the Democratic candidate
+    ***	For each date index, normalized price = Dem price / (Dem price + Rep price)
 *	Election coverage vs. election forecast
-**	Concatenate the normalized price data to the topic coverage data from identify_candidate_topics.py; this brings together topic words and price data, indexed by date
+  **	Concatenate the normalized price data to the topic coverage data from identify_candidate_topics.py; this brings together topic words and price data, indexed by date
 
 granger_testing.py: perform Granger tests to determine significant causal words and their impact
 *	Granger testing
-**	Perform Granger tests  to test causality with max lags up to 3
+  **	Perform Granger tests  to test causality with max lags up to 3
 *	Significant causal words
-**	Compute average p-values across time lags (from 1 up to 3) for each candidate topic term, based on parameter F tests
-**	Sort candidate topic terms by causality probability, where a smaller p-value corresponds to a larger probability that there exists some type of causal relationship between the two time-indexed data 
+  **	Compute average p-values across time lags (from 1 up to 3) for each candidate topic term, based on parameter F tests
+  **	Sort candidate topic terms by causality probability, where a smaller p-value corresponds to a larger probability that there exists some type of causal relationship between the two time-indexed data 
 *	Prior influence
-**	Determine positive impact terms and negative impact terms, where positive impact terms are the ones with p-values in the lower half, and negative impact terms are the ones with p-values in the upper half
+  **	Determine positive impact terms and negative impact terms, where positive impact terms are the ones with p-values in the lower half, and negative impact terms are the ones with p-values in the upper half
 
 ### 3. Usage
 -	Install Jupyter using the documentation provided [here](https://jupyter.org/install)
