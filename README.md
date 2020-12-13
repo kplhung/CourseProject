@@ -48,13 +48,10 @@ o	Determine positive impact terms and negative impact terms, where positive impa
 
 3. Usage
 -	Install Jupyter using the documentation provided here
--	Open terminal and run the following command:
-o	git clone https://github.com/kplhung/CourseProject.git
+-	Open terminal and run the following command: git clone https://github.com/kplhung/CourseProject.git
 -	Launch Jupyter Notebook and navigate to the CourseProject directory
--	Open and run find_election_paragraphs.ipynb
-o	[Kernel]  [Restart & Run All]
--	Open and run mining_causal_topics.ipynb
-o	[Kernel]  [Restart and Run All]
+-	Open and run find_election_paragraphs.ipynb: [Kernel] -> [Restart & Run All]
+-	Open and run mining_causal_topics.ipynb: [Kernel] -> [Restart and Run All]
 
 4. Team member contributions
 This was an individual project.
