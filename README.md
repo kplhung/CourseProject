@@ -57,7 +57,7 @@ Note: [mining_causal_topics.ipynb](https://github.com/kplhung/CourseProject/blob
 -	Open terminal and run the following command: git clone https://github.com/kplhung/CourseProject.git
 -	Launch Jupyter Notebook and navigate to the CourseProject directory
 -	Open and run [find_election_paragraphs.ipynb](https://github.com/kplhung/CourseProject/blob/main/find_election_paragraphs.ipynb): [Kernel] -> [Restart & Run All]
--	Open and run [mining_causal_topics.ipynb](https://github.com/kplhung/CourseProject/blob/main/mining_causal_topics.ipynb): [Kernel] -> [Restart and Run All]
+-	Once [find_election_paragraphs.ipynb](https://github.com/kplhung/CourseProject/blob/main/find_election_paragraphs.ipynb) is finished running, open and run [mining_causal_topics.ipynb](https://github.com/kplhung/CourseProject/blob/main/mining_causal_topics.ipynb): [Kernel] -> [Restart and Run All]
 
 ### 4. Team member contributions
 This was an individual project.
