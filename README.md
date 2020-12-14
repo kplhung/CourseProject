@@ -5,7 +5,7 @@
 ### Reference: 
 Hyun Duk Kim, Malu Castellanos, Meichun Hsu, ChengXiang Zhai, Thomas Rietz, and Daniel Diermeier. 2013. Mining causal topics in text data: Iterative topic modeling with time series feedback. In Proceedings of the 22nd ACM international conference on information & knowledge management (CIKM 2013). ACM, New York, NY, USA, 885-890. DOI=10.1145/2505515.2505612
 
-### Video:
+### Video: https://www.screencast.com/t/yiDQ5OrjQwj
 
 ### Documentation
 Documentation is reproduced below. However, for better formatting and reading, please see the [PDF version](https://github.com/kplhung/CourseProject/blob/main/documentation.pdf).
