@@ -16,16 +16,16 @@ This code parses a large data set  and extracts a set of documents consisting of
 In terms of future applications, the code can be modified to identify target paragraphs of any nature from The New York Times corpus. Various external time series data can also be used in conjunction—physical data comes to mind as a useful application. Or, public opinion polling on issues like climate change or social problems could be coupled with data from The New York Times corpus in order to find any sort of causal relationship between media coverage and public opinion surrounding those issues.  
 
 ### 2. Software implementation
-Note: mining_causal_topics.ipynb combines code and results from identify_candidate_topics.py, iowa_electronic_markets.py, and granger_testing.py into one coherent file; this notebook is the easiest place to see code and results past the election paragraph parsing stage, though documentation has been organized based on the subfiles for ease.
+Note: [mining_causal_topics.ipynb](https://github.com/kplhung/CourseProject/blob/main/mining_causal_topics.ipynb) combines code and results from [identify_candidate_topics.py](https://github.com/kplhung/CourseProject/blob/main/identify_candidate_topics.py), [iowa_electronic_markets.py](https://github.com/kplhung/CourseProject/blob/main/iowa_electronic_markets.py), and [granger_testing.py](https://github.com/kplhung/CourseProject/blob/main/granger_testing.py) into one coherent file; this notebook is the easiest place to see code and results past the election paragraph parsing stage, though documentation has been organized based on the subfiles for ease.
 
-find_election_paragraphs.py: filters May through October 2000 New York Times articles for election-related paragraphs
+[find_election_paragraphs.py](https://github.com/kplhung/CourseProject/blob/main/find_election_paragraphs.py): filters May through October 2000 New York Times articles for election-related paragraphs
 *	find_election_paragraphs(directory): given a directory containing XML article data, walks through all subdirectories and parses all files. Writes all election-related paragraphs (those containing “Gore” or “Bush”) to a file called “election_paragraphs.csv”
    **	Helper functions:
     ***	parse_xml(xml, election_paragraphs): checks XML article for person tag, then parses relevant articles’ full text for relevant paragraphs
     ***	contains_election_words(text): returns true if and only if “Bush” or “Gore” is a substring of the input text
     ***	format_date(file_path): returns formatted date from directory path
 
-identify_candidate_topics.py: applies LDA to the document set to identify candidate topics
+[identify_candidate_topics.py](https://github.com/kplhung/CourseProject/blob/main/identify_candidate_topics.py): applies LDA to the document set to identify candidate topics
 *	Data wrangling
   **	Wrangle and clean paragraph data by removing punctuation and lowercasing text
   **	Remove stop words from the paragraph data and vectorize the text using scikit-learn, then learn the vocabulary dictionary, deriving a document-term matrix over the paragraph set
@@ -33,7 +33,7 @@ identify_candidate_topics.py: applies LDA to the document set to identify candid
   **	Using LDA, learn the documents as bags of words and identify candidate topics in the paragraph set 
   **	Transform the document-term matrix according to the fitted LDA model, and index on date (dates range from May 1st, 2000 to October 31st, 2000)
 
-iowa_electronic_markets.py: wrangles, cleans, and normalizes IEM 2000 Presidential Winner-Takes-All Market data
+[iowa_electronic_markets.py](https://github.com/kplhung/CourseProject/blob/main/iowa_electronic_markets.py): wrangles, cleans, and normalizes IEM 2000 Presidential Winner-Takes-All Market data
 *	Data wrangling
   **	format_date(date): given IEM-style date (mm/dd/yy), returns NYT-style date (yyyy-mm-dd)
   **	Read from “iem_2000.txt”—candidate price data from May to October 2000— and drop irrelevant columns (namely: units, volume, low price, high price, and average price), keeping only date, contract, and last price data; index on date
@@ -43,7 +43,7 @@ iowa_electronic_markets.py: wrangles, cleans, and normalizes IEM 2000 Presidenti
 *	Election coverage vs. election forecast
   **	Concatenate the normalized price data to the topic coverage data from identify_candidate_topics.py; this brings together topic words and price data, indexed by date
 
-granger_testing.py: perform Granger tests to determine significant causal words and their impact
+[granger_testing.py](https://github.com/kplhung/CourseProject/blob/main/granger_testing.py): perform Granger tests to determine significant causal words and their impact
 *	Granger testing
   **	Perform Granger tests  to test causality with max lags up to 3
 *	Significant causal words
@@ -56,8 +56,8 @@ granger_testing.py: perform Granger tests to determine significant causal words 
 -	Install Jupyter using the documentation provided [here](https://jupyter.org/install)
 -	Open terminal and run the following command: git clone https://github.com/kplhung/CourseProject.git
 -	Launch Jupyter Notebook and navigate to the CourseProject directory
--	Open and run find_election_paragraphs.ipynb: [Kernel] -> [Restart & Run All]
--	Open and run mining_causal_topics.ipynb: [Kernel] -> [Restart and Run All]
+-	Open and run [find_election_paragraphs.ipynb](https://github.com/kplhung/CourseProject/blob/main/find_election_paragraphs.ipynb): [Kernel] -> [Restart & Run All]
+-	Open and run [mining_causal_topics.ipynb](https://github.com/kplhung/CourseProject/blob/main/mining_causal_topics.ipynb): [Kernel] -> [Restart and Run All]
 
 ### 4. Team member contributions
 This was an individual project.
